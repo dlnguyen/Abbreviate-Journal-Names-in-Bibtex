@@ -6,10 +6,12 @@ import sys, os, re
  
 try:    bibtexdb = open(sys.argv[1]).read()
 except: print("Error: specify the file to be processed!")
- 
+
+ # mirror from Jabref
+ # https://raw.githubusercontent.com/JabRef/jabref/master/src/main/resources/journals/journalList.txt
 if not os.path.isfile('journalList.txt'):
     import urllib
-    urllib.urlretrieve("https://raw.githubusercontent.com/JabRef/jabref/master/src/main/resources/journals/journalList.txt", 
+    urllib.urlretrieve("https://raw.githubusercontent.com/dlnguyen/Abbreviate-Journal-Names-in-Bibtex/master/journalList.txt", 
             filename="journalList.txt")
 rulesfile = open('journalList.txt')
  
